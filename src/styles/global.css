@@ -1,0 +1,29 @@
+@import "open-props/style";
+@import "open-props/normalize";
+@import "open-props/animations";
+@import "open-props/easings";
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+}
+
+h1 {
+    opacity: 0;
+    color: var(--grape-6);
+    animation:
+            var(--animation-fade-in) forwards,
+            var(--animation-slide-in-up) forwards;
+}
+
+button {
+    /*
+      using `reverse` means we dont have to put
+      opacity: 0 or scale(.8) anywhere
+    */
+    animation:
+            var(--animation-scale-down) reverse,
+            var(--animation-fade-out) reverse;
+    animation-timing-function: var(--ease-squish-5);
+    animation-duration: 1s;
+}

@@ -1,14 +1,14 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import 'animate.css';
 import '../styles/global.css';
+import SEO, { type Props as SEOProps } from "../components/SEO.astro";
 
 export interface Props {
-	title: string;
-	description: string;
-	keywords: string;
+	seo: SEOProps;
 }
 
-const { title, description, keywords}: Props = Astro.props;
+const { seo}: Props = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,9 +18,8 @@ const { title, description, keywords}: Props = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description}>
-		<meta name="keywords" content={keywords}>
-		<title>{title}</title>
+		<SEO {...seo} />
+		<ViewTransitions />
 	</head>
 	<body>
 		<slot />

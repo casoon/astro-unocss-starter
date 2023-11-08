@@ -1,6 +1,10 @@
 # build output
 dist/
 .output/
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
 
 # dependencies
 node_modules/

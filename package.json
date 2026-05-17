@@ -45,9 +45,8 @@
     "vite": "^7.3.3",
     "vitest": "^4.1.6"
   },
-  "resolutions": {
-    "css-select": "^7.0.0",
-    "css-what": "^8.0.0"
+  "pnpm": {
+    "onlyBuiltDependencies": ["@casoon/astro-post-audit", "esbuild", "sharp"]
   },
-  "packageManager": "yarn@4.0.1"
+  "packageManager": "pnpm@11.1.2"
 }

@@ -1,0 +1,4 @@
+allowBuilds:
+  '@casoon/astro-post-audit': true
+  esbuild: true
+  sharp: true

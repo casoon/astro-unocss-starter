@@ -45,18 +45,11 @@ astro.config.mjs  Astro integrations and build checks
 ## Commands
 
 ```sh
-yarn install
-yarn dev
-yarn build
-yarn check
-yarn test
-```
-
-This repository uses Yarn 4 via `packageManager`. If your global Yarn is not available, the checked-in release can be run directly:
-
-```sh
-node .yarn/releases/yarn-4.0.1.cjs install
-node .yarn/releases/yarn-4.0.1.cjs dev
+pnpm install
+pnpm dev
+pnpm build
+pnpm check
+pnpm test
 ```
 
 ## UnoCSS Examples

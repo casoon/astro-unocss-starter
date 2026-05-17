@@ -1,5 +1,3 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = 'change.this';
-export const SITE_DESCRIPTION = '';
+export const SITE_TITLE = 'Astro UnoCSS Starter';
+export const SITE_DESCRIPTION =
+  'A modern Astro starter that demonstrates UnoCSS utilities, shortcuts, icons, variant groups, and build-time SEO checks.';

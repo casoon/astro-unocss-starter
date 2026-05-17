@@ -18,22 +18,19 @@ const {
 } = Astro.props as Props;
 
 const { siteName, siteUrl } = data;
+const title = props.title === siteName ? siteName : `${props.title} | ${siteName}`;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
 ---
 
-<title>{props.title} | {siteName}</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<meta name="theme-color" content="#fff1f2" />
-<link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
+<title>{title}</title>
+<meta name="theme-color" content="#f8f5ef" />
+<link rel="canonical" href={canonicalUrl} />
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords.join(",").toLowerCase()} />
 
-<!-- favicon -->
-<link rel="icon" type="image/png" href="/favicon.png" />
-
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={isPost ? "blog" : "website"} />
-<meta property="og:url" content={`${siteUrl}${Astro.url.pathname}`} />
+<meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={props.title || siteName} />
 <meta property="og:description" content={description} />
 <meta
@@ -43,7 +40,7 @@ const { siteName, siteUrl } = data;
 
 <!-- Twitter -->
 <meta property="twitter:card" content={thumbnail ? "summary_large_image" : "summary"} />
-<meta property="twitter:url" content={`${siteUrl}${Astro.url.pathname}`} />
+<meta property="twitter:url" content={canonicalUrl} />
 <meta property="twitter:title" content={props.title || siteName} />
 <meta property="twitter:description" content={description} />
 {thumbnail !== "" && <meta property="twitter:image" content={thumbnail ? thumbnail.toString() : ""} />}

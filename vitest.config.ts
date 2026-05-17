@@ -1,9 +1,12 @@
 /// <reference types="vitest" />
-import { getViteConfig } from 'astro/config';
+import { defineConfig } from 'vitest/config';
 
-export default getViteConfig({
-    test: {
-        /* for example, use global to avoid globals imports (describe, test, expect): */
-        // globals: true,
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@data': new URL('./src/data', import.meta.url).pathname,
+      '@data/': new URL('./src/data/', import.meta.url).pathname,
     },
+  },
+  test: {},
 });

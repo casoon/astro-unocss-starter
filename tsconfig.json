@@ -2,7 +2,6 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": ".",
-    "types": ["@astrojs/image/client"],
     "strictNullChecks": true,
     "paths": {
       "@assets/*": ["src/assets/*"],

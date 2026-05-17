@@ -1,84 +1,164 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Card from '@components/Card.astro';
+
+const featureCards = [
+  {
+    icon: 'i-lucide-zap',
+    title: 'On-demand CSS',
+    text: 'UnoCSS scans your templates and emits only the utilities you actually use.',
+    sample: 'p-6 rounded-2xl bg-paper',
+  },
+  {
+    icon: 'i-lucide-package-check',
+    title: 'Wind4 preset',
+    text: 'Use familiar Tailwind-style classes while keeping UnoCSS configurable and compact.',
+    sample: 'grid sm:grid-cols-2 gap-4',
+  },
+  {
+    icon: 'i-lucide-sparkles',
+    title: 'Shortcuts',
+    text: 'Bundle repeated class sets into named, project-specific utilities.',
+    sample: 'btn-primary panel eyebrow',
+  },
+  {
+    icon: 'i-lucide-badge-check',
+    title: 'Build checks',
+    text: 'Sitemap, crawler policy, and post-build SEO checks are wired in from the start.',
+    sample: 'astro build',
+  },
+];
+
+const examples = [
+  {
+    label: 'Utility classes',
+    className: 'rounded-xl bg-sage px-4 py-3 text-paper shadow-soft',
+    note: 'Direct atomic classes for one-off layout and color work.',
+  },
+  {
+    label: 'Variant groups',
+    className:
+      'rounded-xl border border-ink/10 px-4 py-3 transition hover:(-translate-y-1 border-coral/60 text-coral)',
+    note: 'Grouped hover styles keep templates readable.',
+  },
+  {
+    label: '@apply in CSS',
+    className: 'code-token',
+    note: 'Shared styles can still live in plain CSS when that is clearer.',
+  },
+];
 ---
 
-<Layout seo={{ title: "Welcome to Astro." }}>
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout
+  seo={{
+    title: 'Astro UnoCSS Starter',
+    description:
+      'A modern Astro starter with practical UnoCSS examples for utilities, shortcuts, icons, variant groups, and build-time SEO checks.',
+  }}
+>
+  <main class="mx-auto max-w-6xl px-5 py-8 sm:px-8 lg:py-12">
+    <section class="grid min-h-[calc(100vh-6rem)] items-center gap-10 lg:grid-cols-[1.04fr_0.96fr]">
+      <div class="space-y-8">
+        <div class="utility-strip">
+          <span class="eyebrow inline-flex items-center gap-2 rounded-full bg-coral/10 px-3 py-2">
+            <span class="i-lucide-atom text-base"></span>
+            Astro 6 + UnoCSS 66
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper/70 px-3 py-2 text-xs font-800 text-sage">
+            <span class="i-lucide-search-check text-base"></span>
+            SEO checks included
+          </span>
+        </div>
 
-<style>
-	:global(#test) {
-		background: aliceblue;
-	}
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+        <div class="space-y-5">
+          <h1 class="max-w-4xl text-5xl font-900 leading-[0.96] tracking-0 text-ink sm:text-7xl">
+            A sharp Astro starter for learning UnoCSS.
+          </h1>
+          <p class="max-w-2xl text-lg leading-8 text-ink/72">
+            This starter keeps the stack small and makes the important UnoCSS ideas visible:
+            utilities, shortcuts, icons, theme tokens, variant groups, and CSS directives.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="btn-primary" href="https://unocss.dev/" target="_blank" rel="noreferrer">
+            <span class="i-lucide-book-open text-lg"></span>
+            UnoCSS docs
+          </a>
+          <a class="btn-ghost" href="https://docs.astro.build/" target="_blank" rel="noreferrer">
+            <span class="i-logos-astro-icon text-lg"></span>
+            Astro docs
+          </a>
+        </div>
+      </div>
+
+      <div class="panel relative overflow-hidden">
+        <div class="absolute right-6 top-6 h-3 w-3 rounded-full bg-coral"></div>
+        <div class="mb-6 flex items-center gap-3">
+          <span class="i-logos-unocss text-5xl"></span>
+          <div>
+            <p class="eyebrow">uno.config.ts</p>
+            <h2 class="text-2xl font-900 text-ink">Starter primitives</h2>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="rounded-xl bg-ink p-4 text-sm leading-7 text-paper shadow-soft">
+            <p><span class="text-coral">shortcuts</span>: btn-primary, btn-ghost, panel</p>
+            <p><span class="text-ochre">theme</span>: ink, paper, sage, coral, ochre</p>
+            <p><span class="text-sage">icons</span>: i-lucide-*, i-logos-*</p>
+            <p><span class="text-mist">transformers</span>: @apply, hover:(...)</p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <span class="rounded-xl bg-ink p-4 text-center text-paper">ink</span>
+            <span class="rounded-xl bg-sage p-4 text-center text-paper">sage</span>
+            <span class="rounded-xl bg-coral p-4 text-center text-paper">coral</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10">
+      <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="eyebrow">Examples</p>
+          <h2 class="text-3xl font-900 text-ink">What this starter demonstrates</h2>
+        </div>
+        <p class="max-w-xl text-sm leading-6 text-ink/68">
+          Each card is intentionally simple enough to copy into a real project.
+        </p>
+      </div>
+
+      <div class="demo-grid">
+        {
+          featureCards.map((card) => (
+            <article class="panel transition hover:(-translate-y-1 border-sage/40)">
+              <span class={`${card.icon} mb-5 text-3xl text-sage`} aria-hidden="true" />
+              <h3 class="mb-3 text-xl font-900 text-ink">{card.title}</h3>
+              <p class="mb-5 text-sm leading-6 text-ink/68">{card.text}</p>
+              <code class="code-token">{card.sample}</code>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="grid gap-5 py-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p class="eyebrow">Class patterns</p>
+        <h2 class="mt-2 text-3xl font-900 text-ink">Readable utilities, when they stay intentional.</h2>
+      </div>
+
+      <div class="grid gap-4">
+        {
+          examples.map((example) => (
+            <article class="panel grid gap-4 sm:grid-cols-[13rem_1fr] sm:items-center">
+              <div class={example.className}>{example.label}</div>
+              <p class="text-sm leading-6 text-ink/68">{example.note}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

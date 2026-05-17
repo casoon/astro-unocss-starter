@@ -9,12 +9,38 @@ export default defineConfig({
   integrations: [
     UnoCSS(),
     siteFiles({
-      sitemap: true,
-      robots: { sitemap: true },
+      sitemap: {
+        priority: [
+          { pattern: '/', priority: 1.0 },
+          { pattern: /^\/blog\//, priority: 0.8 },
+        ],
+        changefreq: [
+          { pattern: '/', changefreq: 'weekly' },
+          { pattern: /.*/, changefreq: 'monthly' },
+        ],
+        audit: { warnOnEmpty: true, errorOnDuplicates: true },
+      },
+      robots: {
+        sitemap: true,
+        agents: [
+          { userAgent: '*', allow: ['/'] },
+          { userAgent: 'GPTBot', allow: ['/'] },
+          { userAgent: 'ClaudeBot', allow: ['/'] },
+        ],
+      },
       llms: {
         title: 'Astro UnoCSS Starter',
         description:
-          'A modern Astro starter that demonstrates UnoCSS utilities, shortcuts, icons, variant groups, and build-time SEO checks.',
+          'A modern Astro starter demonstrating UnoCSS utilities, shortcuts, icons, variant groups, and build-time SEO checks.',
+        sections: [
+          {
+            title: 'Documentation',
+            links: [
+              { title: 'UnoCSS', url: 'https://unocss.dev/', description: 'Atomic CSS engine' },
+              { title: 'Astro', url: 'https://docs.astro.build/', description: 'Web framework' },
+            ],
+          },
+        ],
       },
     }),
     postAudit({

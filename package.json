@@ -1,6 +1,6 @@
 {
   "name": "astro-unocss-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "private": true,
   "description": "Modern Astro starter with UnoCSS utilities, shortcuts, icons, and build-time SEO checks.",

@@ -9,7 +9,7 @@ It demonstrates the parts of UnoCSS that matter in day-to-day Astro work:
 - Iconify icons as CSS classes
 - variant groups like `hover:(-translate-y-1 text-coral)`
 - `@apply` for shared CSS helpers
-- build-time sitemap, crawler policy, and post-build SEO checks
+- build-time sitemap, robots.txt, llms.txt, and post-build SEO checks
 
 ## Why UnoCSS?
 
@@ -25,8 +25,7 @@ Tailwind is still the safest default for teams, client projects, and ecosystem c
 
 - Astro 6
 - UnoCSS 66 with the Wind4 preset
-- `@casoon/astro-sitemap`
-- `@casoon/astro-crawler-policy`
+- `@casoon/astro-site-files` (sitemap, robots.txt, llms.txt)
 - `@casoon/astro-post-audit`
 - Vitest
 

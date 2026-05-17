@@ -194,18 +194,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@casoon/astro-crawler-policy@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "@casoon/astro-crawler-policy@npm:0.1.2"
-  peerDependencies:
-    astro: ">=4.0.0"
-  peerDependenciesMeta:
-    astro:
-      optional: true
-  checksum: a55b1549d2a6769f5c88425fc563b22a7960155ef7ec54686fc88df324630dde6224b168974e0aa0b588e95311236887b477c5a5cc990e6d39e6e6b67213f7db
-  languageName: node
-  linkType: hard
-
 "@casoon/astro-post-audit@npm:^0.2.11":
   version: 0.2.11
   resolution: "@casoon/astro-post-audit@npm:0.2.11"
@@ -215,15 +203,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@casoon/astro-sitemap@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "@casoon/astro-sitemap@npm:0.2.2"
+"@casoon/astro-site-files@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@casoon/astro-site-files@npm:0.1.6"
   peerDependencies:
     astro: ">=6.0.0"
   peerDependenciesMeta:
     astro:
       optional: true
-  checksum: ab3649b7606d1382a9b11260b5f13bb34884496d426eff2771162de0cbd475360f7d595c581a123322dc28bdffb7e53941c6e3f7db208f522d029176848fdce5
+  checksum: 6d857b8e6d37376c4e026d3a50b557b8986acdae3f7d547c28d023a2631df090df72b561d36c8c9afa026ea8821f6151328c8cc9f91d2276203c9c34a16dfd78
   languageName: node
   linkType: hard
 
@@ -2130,9 +2118,8 @@ __metadata:
   resolution: "astro-unocss-starter@workspace:."
   dependencies:
     "@astrojs/check": "npm:^0.9.9"
-    "@casoon/astro-crawler-policy": "npm:^0.1.2"
     "@casoon/astro-post-audit": "npm:^0.2.11"
-    "@casoon/astro-sitemap": "npm:^0.2.2"
+    "@casoon/astro-site-files": "npm:^0.1.6"
     "@iconify-json/logos": "npm:^1.2.11"
     "@iconify-json/lucide": "npm:^1.2.108"
     "@unocss/astro": "npm:^66.6.8"

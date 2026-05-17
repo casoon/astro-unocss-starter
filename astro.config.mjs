@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
-import crawlerPolicy from '@casoon/astro-crawler-policy';
 import postAudit from '@casoon/astro-post-audit';
-import astroSitemap from '@casoon/astro-sitemap';
+import siteFiles from '@casoon/astro-site-files';
 import UnoCSS from 'unocss/astro';
 
 export default defineConfig({
@@ -9,12 +8,13 @@ export default defineConfig({
   server: { port: 8080 },
   integrations: [
     UnoCSS(),
-    astroSitemap(),
-    crawlerPolicy({
-      preset: 'citationFriendly',
-      sitemaps: ['/sitemap.xml'],
-      output: {
-        llmsTxt: true,
+    siteFiles({
+      sitemap: true,
+      robots: { sitemap: true },
+      llms: {
+        title: 'Astro UnoCSS Starter',
+        description:
+          'A modern Astro starter that demonstrates UnoCSS utilities, shortcuts, icons, variant groups, and build-time SEO checks.',
       },
     }),
     postAudit({

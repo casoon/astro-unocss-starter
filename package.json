@@ -30,9 +30,8 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@casoon/astro-crawler-policy": "^0.1.2",
     "@casoon/astro-post-audit": "^0.2.11",
-    "@casoon/astro-sitemap": "^0.2.2",
+    "@casoon/astro-site-files": "^0.1.6",
     "@iconify-json/logos": "^1.2.11",
     "@iconify-json/lucide": "^1.2.108",
     "@unocss/astro": "^66.6.8",
